@@ -11,6 +11,15 @@ namespace GenericPrograms
         static void Main(string[] args)
         {
             Console.WriteLine("\nWelcome to Generic Programs");
+            Console.WriteLine("\n1.Maximum Integer");
+            int option = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("--------------------------------------");
+            switch(option)
+            {
+                case 1:
+                    MaxNumber.Number();
+                    break;
+            }
             Console.ReadLine();
         }
     }
