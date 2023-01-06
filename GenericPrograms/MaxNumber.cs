@@ -20,7 +20,6 @@ namespace GenericPrograms
                 Console.WriteLine("The Maximum Number is : "+b);
             else
                 Console.WriteLine("The Maximum Number is : "+c);
-
         }
         public static void Number1()
         {
@@ -34,7 +33,19 @@ namespace GenericPrograms
                 Console.WriteLine("The Maximum Number is : " + b);
             else
                 Console.WriteLine("The Maximum Number is : " + c);
-
+        }
+        public static void Number2()
+        {
+            string a = "Apple";
+            string b = "Peach";
+            string c = "Banana";
+            Console.WriteLine("Find Maximum string From ( Apple , Peach , Banana)");
+            if ((a.CompareTo(b) > 0) && (a.CompareTo(c) > 0))
+                Console.WriteLine("The Maximum String is : " + a);
+            else if ((b.CompareTo(a) > 0) && (b.CompareTo(c) > 0))
+                Console.WriteLine("The Maximum String is : " + b);
+            else
+                Console.WriteLine("The Maximum String is : " + c);
         }
     }
 }
