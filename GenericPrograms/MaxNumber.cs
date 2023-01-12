@@ -10,78 +10,44 @@ namespace GenericPrograms
     {
         //Creating class
 
-        public T first, second, third;
-        public T[] value;
-        public MaxNumber(T first, T second, T third)
+        public T first, second, third, fourth, fifth;
+        public MaxNumber(T first, T second, T third ,T fourth ,T fifth)
         {
             this.first = first;
             this.second = second;
             this.third = third;
+            this.fourth = fourth;
+            this.fifth = fifth;
         }
-        //UC1 Maximum Integer Number
-        public static void IntNumber()
-        {
-            int a = 32;
-            int b = 50;
-            int c = 85;
-            Console.WriteLine("Find Maximum Number From ( 32 , 50 , 85)");
-            if ((a.CompareTo(b) > 0) && (a.CompareTo(c) > 0))
-                Console.WriteLine("The maximum Number is : " + a);
-            else if ((b.CompareTo(a) > 0) && (b.CompareTo(c) > 0))
-                Console.WriteLine("The Maximum Number is : " + b);
-            else
-                Console.WriteLine("The Maximum Number is : " + c);
-        }
-
-        //UC2 Maximum Float Number
-        public static void FloatNumber()
-        {
-            float a = 3.2f;
-            float b = 6.8f;
-            float c = 5.5f;
-            Console.WriteLine("Find Maximum Number From ( 3.2 , 6.8 , 5.5)");
-            if ((a.CompareTo(b) > 0) && (a.CompareTo(c) > 0))
-                Console.WriteLine("The maximum Number is : " + a);
-            else if ((b.CompareTo(a) > 0) && (b.CompareTo(c) > 0))
-                Console.WriteLine("The Maximum Number is : " + b);
-            else
-                Console.WriteLine("The Maximum Number is : " + c);
-        }
-        //UC3 Maximum String Number
-        public static void StringNumber()
-        {
-            string a = "Apple";
-            string b = "Peach";
-            string c = "Banana";
-            Console.WriteLine("Find Maximum string From ( Apple , Peach , Banana)");
-            if ((a.CompareTo(b) > 0) && (a.CompareTo(c) > 0))
-                Console.WriteLine("The Maximum String is : " + a);
-            else if ((b.CompareTo(a) > 0) && (b.CompareTo(c) > 0))
-                Console.WriteLine("The Maximum String is : " + b);
-            else
-                Console.WriteLine("The Maximum String is : " + c);
-        }
-        // Refactor -1
+        
         //Creating method to find maximum  by using Generic method
-        public static T GenericMaxNumber(T first, T second, T third)          
+        public static T GenericMaxNumber(T first, T second, T third,T fourth, T fifth)          
         {
 
-            if ((first.CompareTo(second) > 0) && (first.CompareTo(third) > 0))
+            if ((first.CompareTo(second) > 0) && (first.CompareTo(third) > 0) && (first.CompareTo(fourth) > 0) && (first.CompareTo(fifth) > 0))
             {
                 return first;
             }
-            else if ((second.CompareTo(first) > 0) && (second.CompareTo(third) > 0))
+            else if ((second.CompareTo(first) > 0) && (second.CompareTo(third) > 0) && (second.CompareTo(fourth) > 0) && (second.CompareTo(fifth) > 0))
             {
                 return second;
             }
-            else
+            else if ((third.CompareTo(first) > 0) && (third.CompareTo(second) > 0) && (third.CompareTo(fourth) > 0) && (third.CompareTo(fifth) > 0))
             {
                 return third;
+            }
+            else if ((fourth.CompareTo(first) > 0) && (fourth.CompareTo(second) > 0) && (fourth.CompareTo(third) > 0) && (fourth.CompareTo(fifth) > 0))
+            {
+                return fourth;
+            }
+            else
+            {
+                return fifth;
             }
         }
         public void TestMaximum()
         {
-            var result = GenericMaxNumber(first, second, third);
+            var result = GenericMaxNumber(first, second, third , fourth,fifth);
             Console.WriteLine("The Result for maximum number is : " + result);
         }
     }
