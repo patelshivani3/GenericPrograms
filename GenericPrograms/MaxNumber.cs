@@ -18,29 +18,6 @@ namespace GenericPrograms
             this.second = second;
             this.third = third;
         }
-
-        // Refactor -1
-        //Creating method to find maximum  by using Generic method
-        public static T GenericMaxNumber(T first, T second, T third)          
-        {
-
-            if ((first.CompareTo(second) > 0) && (first.CompareTo(third) > 0))
-            {
-                return first;
-            }
-            else if ((second.CompareTo(first) > 0) && (second.CompareTo(third) > 0))
-            {
-                return second;
-            }
-            else
-            {
-                return third;
-            }
-        }
-    }
-    public class MaxNumber1
-    {   
-        
         //UC1 Maximum Integer Number
         public static void IntNumber()
         {
@@ -83,6 +60,29 @@ namespace GenericPrograms
                 Console.WriteLine("The Maximum String is : " + b);
             else
                 Console.WriteLine("The Maximum String is : " + c);
+        }
+        // Refactor -1
+        //Creating method to find maximum  by using Generic method
+        public static T GenericMaxNumber(T first, T second, T third)          
+        {
+
+            if ((first.CompareTo(second) > 0) && (first.CompareTo(third) > 0))
+            {
+                return first;
+            }
+            else if ((second.CompareTo(first) > 0) && (second.CompareTo(third) > 0))
+            {
+                return second;
+            }
+            else
+            {
+                return third;
+            }
+        }
+        public void TestMaximum()
+        {
+            var result = GenericMaxNumber(first, second, third);
+            Console.WriteLine("The Result for maximum number is : " + result);
         }
     }
 }
